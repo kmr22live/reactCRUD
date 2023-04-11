@@ -13,9 +13,6 @@ export default function UserData() {
   const handleShow = () => setShow(true);
   const [deleteId, setDeleteId] = useState({});
   const deleteName = [];
-  
-
-  
 
   const handleDelete = (id) => {
     fetch("https://642bc504208dfe25471f0d6e.mockapi.io/userdata/" + id, {
@@ -120,52 +117,55 @@ export default function UserData() {
           </tbody>
         </table>
       </div>
-      <div
-        className="modal fade profilemodelid"
-        id="exampleModal"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div>
-              <div className="profileCard">
-                <div className="card">
-                  <div className="banner">
-                    <img
-                      className="profileCardImg"
-                      src={context.newUserData.profileimg}
-                    />
-                  </div>
+      <div className="centerProfile">
+        <div
+          className="modal fade profilemodelid"
+          id="exampleModal"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div>
+                <div className="profileCard">
+                  <div className="card">
+                    <div className="banner">
+                      <img
+                        className="profileCardImg"
+                        src={context.newUserData.profileimg}
+                      />
+                    </div>
 
-                  <h2 className="name">{context.newUserData.name}</h2>
-                  <div className="profileData">
-                    <p className="profileValue">
-                      <b>Email: </b>
-                      {context.newUserData.email}
-                    </p>
-                    <p className="profileValue">
-                      <b>Address: </b>
-                      {context.newUserData.address},{context.newUserData.city},
-                      {context.newUserData.state},{context.newUserData.country}
-                    </p>
-                    <p className="profileValue">
-                      <b>Phone No: </b>
-                      {context.newUserData.phoneno}
-                    </p>
-                  </div>
+                    <h2 className="name">{context.newUserData.name}</h2>
+                    <div className="profileData">
+                      <p className="profileValue">
+                        <b>Email: </b>
+                        {context.newUserData.email}
+                      </p>
+                      <p className="profileValue">
+                        <b>Address: </b>
+                        {context.newUserData.address},{context.newUserData.city}
+                        ,{context.newUserData.state},
+                        {context.newUserData.country}
+                      </p>
+                      <p className="profileValue">
+                        <b>Phone No: </b>
+                        {context.newUserData.phoneno}
+                      </p>
+                    </div>
 
-                  <div className=" profile-btn">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                      onClick={() => {
-                        context.profileReset();
-                      }}
-                    >
-                      Close
-                    </button>
+                    <div className=" profile-btn">
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                        onClick={() => {
+                          context.profileReset();
+                        }}
+                      >
+                        Close
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

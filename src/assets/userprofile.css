@@ -178,3 +178,56 @@ body {
   max-width: 250px;
   margin: 10px auto;
 }
+
+
+/*Mobile View*/
+@media only screen and (max-width: 1200px) {
+  table.table td,
+  table.table tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  table.table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  table.table {
+    border-radius: 50px;
+  }
+  table.table td:first-child {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  table.table td:last-child {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  table.table tr + tr {
+    margin-top: 1.5em;
+  }
+  table.table tr {
+    border: 0.1px solid grey;
+    border-radius: 30px;
+  }
+  table.table td {
+    /* make like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+  table.table td:before {
+    font-weight: bolder;
+    content: attr(data-label);
+    display: inline-block;
+    line-height: 1.5;
+    width: 100%;
+    white-space: nowrap;
+  }
+  .modal .modal-content {
+    margin-left: 5%;
+  }
+}
+

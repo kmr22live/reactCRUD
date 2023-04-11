@@ -13,21 +13,9 @@ export default function UserData() {
   const handleShow = () => setShow(true);
   const [deleteId, setDeleteId] = useState({});
   const deleteName = [];
-  const [i, setI] = useState("");
+  
 
-  //   const [userData, setUserData] = useState([]);
-
-  //   const getuserData = () => {
-  //     fetch("https://642bc504208dfe25471f0d6e.mockapi.io/userdata")
-  //       .then((data) => data.json())
-  //       .then((res) => {
-  //         setUserData(res);
-  //       });
-  //   };
-
-  //   useEffect(() => {
-  //     getuserData();
-  //   }, []);
+  
 
   const handleDelete = (id) => {
     fetch("https://642bc504208dfe25471f0d6e.mockapi.io/userdata/" + id, {
@@ -58,15 +46,15 @@ export default function UserData() {
               deleteName.push(user.name);
               return (
                 <tr key={user.id}>
-                  <td>{index + 1}</td>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>
+                  <td data-label="No:">{index + 1}</td>
+                  <td data-label="Name:">{user.name}</td>
+                  <td data-label="Email:">{user.email}</td>
+                  <td data-label="Address:">
                     {user.address},{user.city},{user.state}
                     {user.country}
                   </td>
-                  <td>{user.phoneno}</td>
-                  <td className="action-bar">
+                  <td data-label="Phone no:">{user.phoneno}</td>
+                  <td data-label="Action:" className="action-bar">
                     {/* <a
                     href="#editEmployeeModal"
                     className="edit"
